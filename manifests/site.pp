@@ -65,7 +65,10 @@ node default {
   include ruby::1_9_3
 
   # kickass
-  exec {git clone git@github.com:patch-engineering/kickass.git ~/code/kickass}
+  exec { "clone kickass":
+	command => "git clone git@github.com:patch-engineering/kickass.git ~/code/kickass",
+	creates => "/Users/${username}/code/kickass"
+  }
 
   # common, useful packages
   package {

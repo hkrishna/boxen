@@ -64,6 +64,9 @@ node default {
   # default ruby versions
   include ruby::1_9_3
 
+  # kickass
+  exec {git clone git@github.com:patch-engineering/kickass.git ~/code/kickass}
+
   # common, useful packages
   package {
     [

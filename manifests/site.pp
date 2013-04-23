@@ -56,6 +56,11 @@ node default {
   include nginx
   include nvm
 
+  # fail if FDE is not enabled
+  # if $::root_encrypted == 'no' {
+  #  fail('Please enable full disk encryption and try again')
+  # }
+
   # default ruby versions
   include ruby::1_9_3
 
